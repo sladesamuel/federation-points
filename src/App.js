@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import CheckAuth from "./CheckAuth"
-import NotFound from "./NotFound"
-import Login from "./Login"
-import Home from "./Home"
+import CheckAuth from "./components/CheckAuth"
+import NotFound from "./components/NotFound"
+import Login from "./components/Login"
+import Home from "./components/Home"
 
 const App = () => (
   <Router>

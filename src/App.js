@@ -1,12 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./Home"
+import CheckAuth from "./CheckAuth"
+import NotFound from "./NotFound"
 import Login from "./Login"
+import Home from "./Home"
 
 const App = () => (
   <Router>
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Home />} />
+
+      <Route path="/" element={<CheckAuth />}>
+        <Route index={true} element={<Home />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
 )

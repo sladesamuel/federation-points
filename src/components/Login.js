@@ -24,9 +24,18 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const submitLogin = () => {
-    // TODO: Call login function.
-    console.log(`TODO: Login for ${email}`)
+  const submitLogin = async () => {
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: {
+        username: email,
+        password
+      }
+    }
+
+    const result = await fetch("/.netlify/functions/login", options)
+    console.log(result)
   }
 
   return (

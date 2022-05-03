@@ -1,5 +1,24 @@
 import { useState } from "react"
 import { Button, TextField } from "@mui/material"
+import styled from "@emotion/styled"
+
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -25px;
+`
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+
+  & > div {
+    margin: 0 0 1rem 0;
+  }
+`
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -11,9 +30,10 @@ const Login = () => {
   }
 
   return (
-    <>
+    <Container>
       <h2>Login</h2>
-      <form
+
+      <Form
         onSubmit={(e) => {
           e.preventDefault()
           submitLogin()
@@ -29,8 +49,9 @@ const Login = () => {
             e.preventDefault()
             setEmail(e.target.value)
           }}
+          autoComplete="true"
           autoFocus
-          autoComplete
+          fullWidth
           required
         />
 
@@ -44,7 +65,8 @@ const Login = () => {
             e.preventDefault()
             setPassword(e.target.value)
           }}
-          autoComplete
+          autoComplete="true"
+          fullWidth
           required
         />
 
@@ -58,8 +80,8 @@ const Login = () => {
         >
           Login
         </Button>
-      </form>
-    </>
+      </Form>
+    </Container>
   )
 }
 

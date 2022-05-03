@@ -6,7 +6,7 @@ const renderRoute = ({ routes, element, ...props }) => {
   const childRoutes = routes || []
 
   return (
-    <Route key={path} {...props} element={<Page>{element}</Page>}>
+    <Route key={path || "/"} {...props} element={<Page>{element}</Page>}>
       {childRoutes.map(renderRoute)}
     </Route>
   )

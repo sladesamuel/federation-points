@@ -28,10 +28,10 @@ const Login = () => {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: {
+      body: JSON.stringify({
         username: email,
         password
-      }
+      })
     }
 
     const result = await fetch("/.netlify/functions/login", options)
